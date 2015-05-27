@@ -10,8 +10,14 @@ if len(sys.argv) != 2:
 else:
     fileURL = sys.argv[1]
     print("File set to: ", sys.argv[1])
+try:
+    fobj = open(fileURL, "r")
+except:
+    print("Unexpected error: ", sys.exc_info()[0])
+    print("File open failed, exiting program")
+    sys.exit()
 
-fobj = open(fileURL, "r")
+
 for line in fobj:
     reqList.append(HTTPRequest(line))
 
