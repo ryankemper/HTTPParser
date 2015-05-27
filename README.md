@@ -5,6 +5,9 @@ Usage: The parser accepts one command line argument, the file to be read. If no 
 
 Example: python parser.py ../resources/sdsc-http.txt
 
+Output generated:
+
+
 File set to: ../resources/sdsc-http.txt
 
 Hour 00:  592 requests
