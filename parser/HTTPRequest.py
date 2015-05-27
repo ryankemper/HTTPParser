@@ -11,7 +11,7 @@ class HTTPRequest:
 
     def parseHTTPReqTime(self, line):
         result = re.search(self.timeRegex, line)
-        if (result):
+        if result:
             self.reqTime = result.group(0)
         else:
             print("Invalid HTTP Request - no time found")

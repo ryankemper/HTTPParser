@@ -2,7 +2,7 @@ import sys
 from HTTPRequest import HTTPRequest
 
 reqList = []
-fileURL = "../resources/sdsc-http.txt" #  Default URL
+fileURL = "../resources/sdsc-http.txt" # Default URL
 
 if len(sys.argv) != 2:
     print("Usage: " + sys.argv[0] + " filename.txt")
@@ -16,7 +16,6 @@ except:
     print("Unexpected error: ", sys.exc_info()[0])
     print("File open failed, exiting program")
     sys.exit()
-
 
 for line in fobj:
     reqList.append(HTTPRequest(line))
