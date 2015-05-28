@@ -2,7 +2,7 @@ import sys
 from HTTPRequest import HTTPRequest
 
 reqList = []
-fileURL = "../resources/sdsc-http.txt" # Default URL
+fileURL = "../resources/sdsc-http.txt" # Default file location
 
 if len(sys.argv) != 2:
     print("Usage: " + sys.argv[0] + " filename.txt")
