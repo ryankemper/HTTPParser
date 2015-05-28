@@ -24,7 +24,8 @@ reqsByHour = {"00": 0, "01" : 0, "02" : 0, "03" : 0, "04" : 0, "05" : 0, "06" : 
               "12" : 0, "13" : 0, "14" : 0, "15" : 0, "16" : 0, "17" : 0, "18" : 0, "19" : 0, "20" : 0, "21" : 0, "22" : 0, "23" : 0}
 
 for req in reqList:
-    reqsByHour[req.getHour()] += 1
+    if req.isValidRequest():
+        reqsByHour[req.getHour()] += 1
 
 for x in range (0,3):
     for y in range (0, 10):
