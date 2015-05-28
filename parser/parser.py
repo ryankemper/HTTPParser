@@ -4,21 +4,21 @@ import sys
 from HTTPRequest import HTTPRequest
 
 reqList = []
-fileLoc = "../resources/sdsc-http.txt" # Default file location
+path = "../resources/sdsc-http.txt" # Default file location
 
 if len(sys.argv) != 2:
     print("Usage: " + sys.argv[0] + " filename.txt")
-    print("Proceeding with default file location of " + fileLoc + "\n")
+    print("Proceeding with default file location of " + path + "\n")
 else:
-    fileLoc = sys.argv[1]
-    print("File set to: ", sys.argv[1])
+    path = sys.argv[1]
+    print("File set to: ", path)
 
 try:
-    fobj = open(fileLoc, "r")
+    fobj = open(path, "r")
+except IOError:
+    print("IO Error: ", sys.exc_info()[0])
 except:
     print("Unexpected error: ", sys.exc_info()[0])
-    print("File open failed, exiting program")
-    sys.exit()
 
 for line in fobj:
     reqList.append(HTTPRequest(line))
