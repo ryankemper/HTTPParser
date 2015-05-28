@@ -1,17 +1,20 @@
+#!/usr/bin/env python3
+
 import sys
 from HTTPRequest import HTTPRequest
 
 reqList = []
-fileURL = "../resources/sdsc-http.txt" # Default file location
+fileLoc = "../resources/sdsc-http.txt" # Default file location
 
 if len(sys.argv) != 2:
     print("Usage: " + sys.argv[0] + " filename.txt")
-    print("Proceeding with default fileURL of " + fileURL + "\n")
+    print("Proceeding with default file location of " + fileLoc + "\n")
 else:
-    fileURL = sys.argv[1]
+    fileLoc = sys.argv[1]
     print("File set to: ", sys.argv[1])
+
 try:
-    fobj = open(fileURL, "r")
+    fobj = open(fileLoc, "r")
 except:
     print("Unexpected error: ", sys.exc_info()[0])
     print("File open failed, exiting program")
